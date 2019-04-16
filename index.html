@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线钓鱼，愿者上钩。</title>
+    <style>
+        form{
+            color: aliceblue;
+            text-align: center;
+        }
+    body{
+        background: orange;
+    }
+    h1{
+        color: aliceblue;
+        text-align: center;
+    }
+    #btn{
+        font-size: 20px;
+        border:none;
+        width: 150px;
+        background: #8000801c;
+        border-radius: 30px;
+        height: 50px;
+        color: aliceblue;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    #btn:hover{
+        background: #8000804d;
+    }
+    </style>
+    <script src="https://text.xiaohuwei.cn/weather/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <h1>在线钓鱼，愿者上钩。</h1>
+    <form id="frm">
+       尊姓大名：<input type="text" name="nickName">
+            <br> <br>
+            &nbsp&nbsp&nbsp&nbsp用户名：<input type="text" name="userName">
+        <br> <br>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp密码：<input type="password" name="pwd">
+        <br> <br> <br>
+<input type="button" id="btn" value="提交注册哦~">
+    </form>
+</body>
+
+<script>
+$("#btn").click(function(){
+$.post("2.php",$("#frm").serialize(),function(res){//表单序列化
+    if(res==1){
+        alert("ok!你已经成功上钩！~~~");
+        window.location.href="1.html";
+    }else{
+        alert("注册失败！")
+    }
+})
+})
+</script>
+</html>
